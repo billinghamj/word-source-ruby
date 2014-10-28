@@ -1,5 +1,6 @@
 require 'rake/testtask'
 require 'simplecov'
+require 'coveralls'
 
 desc 'Tests the library'
 task :test do
@@ -9,7 +10,8 @@ end
 namespace :test do
 	desc 'Generates a coverage report'
 	task :coverage do
-		SimpleCov.command_name 'Unit Tests'
+		SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+
 		SimpleCov.start do
 			add_filter '/test/'
 		end

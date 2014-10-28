@@ -6,4 +6,5 @@ group :test do
 	gem 'rake'
 	gem 'minitest'
 	gem 'simplecov', require: false
+	gem 'coveralls', require: false
 end
