@@ -36,6 +36,7 @@ class StreamWordSource
 		@word_usage[word] += 1
 
 		# no vowel/consonant sorting here - more efficient in bulk
+		# consider map reduce here?
 		word.each_char do |char|
 			@character_usage[char.downcase] += 1
 		end
