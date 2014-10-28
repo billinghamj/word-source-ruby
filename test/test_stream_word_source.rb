@@ -58,4 +58,25 @@ class TestStreamWordSource < Minitest::Test
 		assert_equal 'ipsum', ws.top_words[0]
 		assert_equal 'lorem', ws.top_words[1]
 	end
+
+	def test_callbacks
+		io = StringIO.new 'ipsum,lorem,ipsum'
+		ws = StreamWordSource.new io
+
+		ipsum = 0
+		lorem = 0
+
+		ws.on_word 'ipsum' do
+			ipsum += 1
+		end
+
+		ws.on_word 'lorem' do
+			lorem += 1
+		end
+
+		assert_equal true, ws.run
+
+		assert_equal 2, ipsum
+		assert_equal 1, lorem
+	end
 end
