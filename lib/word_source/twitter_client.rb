@@ -3,7 +3,11 @@ require 'word_source/twitter_tweets_word_source'
 
 class TwitterClient
 	def initialize(options)
-		@client = Twitter::REST::Client.new options
+		if options[:client]
+			@client = options[:client]
+		else
+			@client = Twitter::REST::Client.new options
+		end
 	end
 
 	def search(query)
