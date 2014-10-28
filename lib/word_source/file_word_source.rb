@@ -1,4 +1,4 @@
-require './stream_word_source'
+require 'word_source/stream_word_source'
 
 class FileWordSource < StreamWordSource
 	def initialize(file, options = {})

@@ -1,4 +1,4 @@
-require './stream_word_source'
+require 'word_source/stream_word_source'
 require 'stringio'
 
 class TwitterTweetsWordSource < StreamWordSource

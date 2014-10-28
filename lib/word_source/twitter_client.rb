@@ -1,5 +1,5 @@
 require 'twitter'
-require './twitter_tweets_word_source'
+require 'word_source/twitter_tweets_word_source'
 
 class TwitterClient
 	def initialize(options)

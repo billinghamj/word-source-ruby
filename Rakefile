@@ -4,6 +4,8 @@ require 'coveralls'
 
 desc 'Tests the library'
 task :test do
+	$LOAD_PATH.unshift("#{File.dirname(__FILE__)}/lib")
+	require 'word_source'
 	Dir.glob('./test/test_*.rb').each { |file| require file }
 end
 

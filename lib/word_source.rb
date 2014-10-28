@@ -1,0 +1,5 @@
+require 'word_source/stream_word_source'
+require 'word_source/string_word_source'
+require 'word_source/file_word_source'
+require 'word_source/twitter_tweets_word_source'
+require 'word_source/twitter_client'
