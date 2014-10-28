@@ -10,7 +10,10 @@ end
 namespace :test do
 	desc 'Generates a coverage report'
 	task :coverage do
-		SimpleCov.formatter = Coveralls::SimpleCov::Formatter
+		SimpleCov.formatter = SimpleCov::Formatter::MultiFormatter[
+			SimpleCov::Formatter::HTMLFormatter,
+			Coveralls::SimpleCov::Formatter
+		]
 
 		SimpleCov.start do
 			add_filter '/test/'
