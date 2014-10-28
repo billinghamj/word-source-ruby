@@ -1,5 +1,5 @@
 require 'minitest/autorun'
-require 'stream_word_source'
+require './lib/stream_word_source'
 
 class TestStreamWordSource < Minitest::Test
 	def test_initialization
